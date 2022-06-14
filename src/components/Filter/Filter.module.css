@@ -1,0 +1,9 @@
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input,
+.label {
+  margin-left: 30px;
+}
