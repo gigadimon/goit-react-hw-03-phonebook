@@ -18,6 +18,18 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const localContacts = JSON.parse(localStorage.getItem('contacts'));
+    localContacts &&
+      this.setState({
+        contacts: [...localContacts],
+      });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+
   deleteContact = id => {
     this.setState({
       contacts: [...this.state.contacts.filter(contact => contact.id !== id)],
