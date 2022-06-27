@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import { ContactForm } from 'components/ContactForm';
-import Contacts from 'components/ContactList';
+import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
 import s from './App.module.css';
 
@@ -55,10 +55,10 @@ class App extends Component {
     return (
       <div className={s.container}>
         <h1>Phonebook</h1>
-        <ContactForm addContact={this.addContact} contacts={contacts} />
+        <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={filter} handleChange={this.handleFilterChange} />
-        <Contacts
+        <ContactList
           contacts={contacts}
           filter={filter}
           deleteContact={this.deleteContact}

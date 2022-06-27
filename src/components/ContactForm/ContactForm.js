@@ -6,7 +6,6 @@ import s from './ContactForm.module.css';
 class ContactForm extends Component {
   static propTypes = {
     addContact: PropTypes.func.isRequired,
-    contacts: PropTypes.array.isRequired,
   };
 
   state = {
